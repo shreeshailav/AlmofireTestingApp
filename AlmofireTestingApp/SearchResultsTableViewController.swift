@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import SafariServices
 
 class SearchResultsTableViewController: UITableViewController {
     
@@ -83,8 +84,8 @@ class SearchResultsTableViewController: UITableViewController {
         guard let url = URL.init(string: "https://en.wikipedia.org/wiki/\(title)")
             else { return }
         
-        //let safariVC = SFSafariViewController(url: url)
-        //present(safariVC, animated: true, completion: nil)
+        let safariVC = SFSafariViewController(url: url)
+        present(safariVC, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
